@@ -63,11 +63,11 @@ public class MyAdapter extends ListAdapter<Word, MyAdapter.MyViewHolder> {     /
             if (b) {
                 //视图更新
                 holder.textViewChinese.setVisibility(View.VISIBLE);
-                word.setChineseInvisible(false);  //底层数据更新   （但由于Livedata的观察者也会实时刷新数据，所以要在activity里判断)
+                word.setChineseInvisible(true);  //底层数据更新   （但由于Livedata的观察者也会实时刷新数据，所以要在activity里判断)
                 wordViewModel.updateWords(word);   //修改数据库
             } else {
                 holder.textViewChinese.setVisibility(View.GONE);
-                word.setChineseInvisible(true);
+                word.setChineseInvisible(false);
                 wordViewModel.updateWords(word);
             }
         });

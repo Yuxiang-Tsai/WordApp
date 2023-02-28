@@ -17,6 +17,7 @@ public class Word {
     @ColumnInfo(name = "chinese_invisible")
     private boolean ChineseInvisible;
 
+    //不可见
     public boolean isChineseInvisible() {
         return ChineseInvisible;
     }
@@ -24,16 +25,6 @@ public class Word {
     public void setChineseInvisible(boolean chineseInvisible) {
         ChineseInvisible = chineseInvisible;
     }
-    /*    @ColumnInfo(name = "foo_data")
-    private boolean foo;
-
-    public boolean isFoo() {
-        return foo;
-    }
-
-    public void setFoo(boolean foo) {
-        this.foo = foo;
-    }*/
 
     public Word(String word, String chineseMeaning) {
         this.word = word;

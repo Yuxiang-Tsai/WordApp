@@ -61,14 +61,13 @@ public class MyAdapter extends ListAdapter<Word, MyAdapter.MyViewHolder> {     /
         holder.aSwitchChineseInvisible.setOnCheckedChangeListener((compoundButton, b) -> {
             Word word = (Word) holder.itemView.getTag(R.id.word_for_view_holder);
             if (b) {
-                //holder.textViewChinese.setVisibility(View.GONE);//视图更新
+                //视图更新
                 holder.textViewChinese.setVisibility(View.VISIBLE);
-                word.setChineseInvisible(true);  //底层数据更新   （但由于Livedata的观察者也会实时刷新数据，所以要在activity里判断)
+                word.setChineseInvisible(false);  //底层数据更新   （但由于Livedata的观察者也会实时刷新数据，所以要在activity里判断)
                 wordViewModel.updateWords(word);   //修改数据库
             } else {
-                //holder.textViewChinese.setVisibility(View.VISIBLE);
                 holder.textViewChinese.setVisibility(View.GONE);
-                word.setChineseInvisible(false);
+                word.setChineseInvisible(true);
                 wordViewModel.updateWords(word);
             }
         });
@@ -84,14 +83,13 @@ public class MyAdapter extends ListAdapter<Word, MyAdapter.MyViewHolder> {     /
         holder.textViewNumber.setText(String.valueOf(position + 1));  //position是从0开始
         holder.textViewChinese.setText(String.valueOf(word.getChineseMeaning()));
         holder.textViewEnglish.setText(String.valueOf(word.getWord()));
-        if (word.isChineseInvisible()) {
-            //holder.textViewChinese.setVisibility(View.GONE);  //GONE会连位置都让出来
-            holder.textViewChinese.setVisibility(View.VISIBLE);
-            holder.aSwitchChineseInvisible.setChecked(true);
-        } else {
-           // holder.textViewChinese.setVisibility(View.VISIBLE);
+        if (!word.isChineseInvisible()) {
+            //GONE会连位置都让出来
             holder.textViewChinese.setVisibility(View.GONE);
             holder.aSwitchChineseInvisible.setChecked(false);
+        } else {
+            holder.textViewChinese.setVisibility(View.VISIBLE);
+            holder.aSwitchChineseInvisible.setChecked(true);
         }
 
 

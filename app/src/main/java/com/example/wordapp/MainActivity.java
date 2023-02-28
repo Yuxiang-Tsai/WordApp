@@ -1,5 +1,7 @@
 package com.example.wordapp;
 
+import static java.lang.System.exit;
+
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.Toast;
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     exitTime = System.currentTimeMillis();
                 } else {
                     finish();
+                    exit(0);
                 }
                 return true;
             }

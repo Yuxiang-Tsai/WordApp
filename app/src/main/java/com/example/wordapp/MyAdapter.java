@@ -113,7 +113,7 @@ public class MyAdapter extends ListAdapter<Word, MyAdapter.MyViewHolder> {     /
         @SuppressLint("UseSwitchCompatOrMaterialCode")
         Switch aSwitchChineseInvisible;
 
-        public MyViewHolder(@NonNull View itemView) {    //绑定视图
+        public MyViewHolder(@NonNull View itemView) {     //绑定视图
             super(itemView);
             textViewNumber = itemView.findViewById(R.id.textViewNumber);
             textViewChinese = itemView.findViewById(R.id.textViewChinese);

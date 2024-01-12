@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MyAdapter extends ListAdapter<Word, MyAdapter.MyViewHolder> {     //要重写三个函数 和 新建一个自己的viewholder类 （第二步）
+public class MyAdapter extends ListAdapter<Word, MyAdapter.MyViewHolder> {     //要重写三个函数 和 新建一个自己的 view holder 类 （第二步）
 
     boolean useCardView;
     WordViewModel wordViewModel;

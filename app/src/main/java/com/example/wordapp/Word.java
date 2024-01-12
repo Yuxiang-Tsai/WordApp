@@ -11,13 +11,12 @@ public class Word {
 
     @ColumnInfo(name = "english_word")
     private String word;
-    @ColumnInfo(name="chinese_word")
+    @ColumnInfo(name = "chinese_word")
     private String chineseMeaning;
 
     @ColumnInfo(name = "chinese_invisible")
     private boolean ChineseInvisible;
 
-    //不可见
     public boolean isChineseInvisible() {
         return ChineseInvisible;
     }
